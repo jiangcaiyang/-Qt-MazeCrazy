@@ -4,3 +4,6 @@ SOURCES += \
 
 HEADERS += \
     MCFrame.h
+
+OTHER_FILES += \
+    readme.txt

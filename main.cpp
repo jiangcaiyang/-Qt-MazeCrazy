@@ -9,7 +9,7 @@ jiangcaiyang123@163.com
 
 #include <QApplication>
 #include <QTranslator>
-#include "DiagramViewApp.h"
+#include "MCFrame.h"
 
 int main( int argc, char** argv )
 {
@@ -17,9 +17,9 @@ int main( int argc, char** argv )
 	QTranslator trans;
 	trans.load( "zh_CN" );
 	app.installTranslator( &trans );
-/*
-	DiagramViewApp view;
-	view.show( );
-*/
+
+	MCFrame frame;
+	frame.show( );
+
 	return app.exec( );
 }

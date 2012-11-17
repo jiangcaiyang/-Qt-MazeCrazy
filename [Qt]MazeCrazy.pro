@@ -1,2 +1,6 @@
 SOURCES += \
-    main.cpp
+    main.cpp \
+    MCFrame.cpp
+
+HEADERS += \
+    MCFrame.h

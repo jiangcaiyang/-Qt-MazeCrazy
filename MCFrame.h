@@ -2,8 +2,8 @@
 #define MCFRAME_H
 
 #include <QMainWindow>
-#include <QLabel>		// 以后版本可能不要
-#include <QStackedLayout>
+
+#include "MCWidget.h"
 
 class MCFrame: public QMainWindow
 {
@@ -12,10 +12,12 @@ public:
 	MCFrame( QWidget* parent = 0 );
 private slots:
 	void About( void );
-	void Start( void );
+    //void Start( void );
 private:
-	void CreateWidgets( void );
+    //void CreateWidgets( void );
 	void CreateMenus( void );
+
+    MCWidget*           m_pWidget;
 
 	QStackedLayout*		m_pMainLayout;
 	QLabel*				m_pHelloPage;

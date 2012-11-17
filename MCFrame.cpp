@@ -3,7 +3,10 @@
 
 MCFrame::MCFrame( QWidget* parent ): QMainWindow( parent )
 {
-	CreateWidgets( );
+    m_pWidget = new MCWidget( this );
+    setCentralWidget( m_pWidget );
+
+    //CreateWidgets( );
 	CreateMenus( );
 
 	setFixedSize( 640, 480 );
@@ -25,7 +28,7 @@ void MCFrame::CreateMenus( void )
 	connect( pAboutQtAction, SIGNAL( triggered( ) ),
 			 qApp, SLOT( aboutQt( ) ) );
 	connect( pStartAction, SIGNAL( triggered( ) ),
-			 this, SLOT( Start( ) ) );
+             m_pWidget, SLOT( Start( ) ) );
 
 	pMazeMenu->addAction( pStartAction );
 	pHelpMenu->addAction( pAboutAction );
@@ -42,6 +45,7 @@ void MCFrame::About( void )
 	QMessageBox::about( this, tr( "MazeCrazy" ),
 						tr( "<h1>Thank You For visiting me.</h1>" ) );
 }
+/*
 //-----------------------------------------------------------------------------
 void MCFrame::CreateWidgets( void )
 {
@@ -53,9 +57,10 @@ void MCFrame::CreateWidgets( void )
 	m_pMainLayout->addWidget( m_pStartPage );
 	m_pMainLayout->setCurrentIndex( 0 );
 	setCentralWidget( m_pMainLayout );
-}
+}*/
+/*
 //-----------------------------------------------------------------------------
 void MCFrame::Start( void )
 {
 	m_pMainLayout->setCurrentIndex( 1 );
-}
+}*/
